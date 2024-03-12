@@ -80,8 +80,34 @@ void OutputAccount(char *filename);
 
 void GradeAppeal(struct studentNode* head, char* schoolNumber);
 
-void ReviseGrades(struct studentNode* head);
+void ReviseGrades(struct studentNode** head);
 
 void DisplayStudentInfo(struct studentNode* head, char* schoolNumber);
+
+void DeleteAppeal(char *school);
+
+int SearchStudentNumber(char *filePath,char *schoolNumber);
+
+void ReviseStudent(struct studentNode **head,char *schoolNumber,int chinese,int math,int english);
+
+//void AverageScores(struct student* head);
+//
+//void TeacherScoreAnaly(struct student* head);
+//
+//void PrintTopStudents(struct student* head, int subject, int count);
+//
+//void SelectionSort(struct student* head, int subjectChoice, int orderChoice);
+
+void Regist(struct accountNode *head);
+
+void displayAccountsFromFile();
+
+void insertAccountToList(struct accountNode** head, struct account acc);
+
+void deleteAccountFromFile(const char* username);
+
+void RegistConfirm(struct accountNode** head);
+
+int ManagerWorkMenu();
 
 #endif

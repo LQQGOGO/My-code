@@ -6,7 +6,7 @@
 
 int main()
 {
-	int c1,c2,c3,flag;
+	int c1,c2,c3,c4,flag;
 	char role;
 	char m;
 	char school[MAXLENGTH];
@@ -32,8 +32,7 @@ int main()
 		switch (c1)
 		{
 		case 1:
-			printf("还没写\n");
-			//**************AccountRegist(&acchead,"StudentAccount.txt");
+			Regist(acchead);
 			continue;
 		case 2:
 			flag = AccountLand(acchead,&role,class,school);
@@ -147,7 +146,7 @@ int main()
 				system("cls");
 				continue;
 			case 3:
-				ReviseGrades(stuhead);
+				ReviseGrades(&stuhead);
 				system("pause");
 				system("cls");
 				continue;
@@ -197,7 +196,30 @@ int main()
 			system("cls");
 			switch (m) {
 			case '1':
-				
+				while(1){
+					c4= ManagerWorkMenu();
+					system("cls");
+					switch (c4) {
+					case 1:
+						RegistConfirm(&acchead);
+						system("pause");
+						break;
+					case 2:
+						ReviseAccount();
+						system("pause");
+						break;
+					case 3:
+						FindAccount();
+						system("pause");
+						break;
+						break;
+					default:
+						system("cls");
+						printf("无效请求，请重新输入:\n");
+						continue;
+					}
+					break;
+				}
 				continue;
 			case '2':
 				goto teacher;
